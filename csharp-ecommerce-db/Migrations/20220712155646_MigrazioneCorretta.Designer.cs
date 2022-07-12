@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace csharp_ecommerce_db.Migrations
 {
     [DbContext(typeof(EcommerceContext))]
-    [Migration("20220712132327_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220712155646_MigrazioneCorretta")]
+    partial class MigrazioneCorretta
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -64,7 +64,8 @@ namespace csharp_ecommerce_db.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasColumnName("Status");
 
                     b.HasKey("OrderId");
 
@@ -104,9 +105,9 @@ namespace csharp_ecommerce_db.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Price")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Price")
+                        .HasColumnType("int")
+                        .HasColumnName("Price");
 
                     b.HasKey("ProductID");
 

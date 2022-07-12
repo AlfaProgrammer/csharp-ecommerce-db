@@ -62,7 +62,8 @@ namespace csharp_ecommerce_db.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Status")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasColumnName("Status");
 
                     b.HasKey("OrderId");
 
@@ -102,9 +103,9 @@ namespace csharp_ecommerce_db.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Price")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Price")
+                        .HasColumnType("int")
+                        .HasColumnName("Price");
 
                     b.HasKey("ProductID");
 

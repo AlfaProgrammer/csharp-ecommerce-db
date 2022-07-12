@@ -7,6 +7,8 @@ public class Order
     [Key]
     public int OrderId { get; set; }
     public string Data { get; set; }
+    
+    [Column("Status", TypeName = "bit")]
     public bool Status { get; set; }
 
     public int CustomerId { get; set; }

@@ -25,7 +25,16 @@
     //EComDB.Add(product1);
     //EComDB.Add(product2);
     //EComDB.Add(product3);
-    
+
     ////Salvo i cambiamente appena effettuati
     //EComDB.SaveChanges();
+
+    List<Product> prodotti =
+        (from p in EComDB.Products select p).ToList<Product>();
+
+    foreach (Product prod in prodotti)
+    {
+        Console.WriteLine(prod.Name);
+        Console.WriteLine(prod.Price);
+    }
 }
